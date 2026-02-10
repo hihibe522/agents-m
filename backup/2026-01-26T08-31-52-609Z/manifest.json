@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "createdAt": "2026-01-26T08:32:55.556Z",
+  "scope": "global",
+  "operation": "change-to-agents",
+  "entries": [
+    {
+      "originalPath": "/Users/be_wang/.agents/AGENTS.md",
+      "kind": "file",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.agents/CLAUDE.md",
+      "kind": "file",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.agents/GEMINI.md",
+      "kind": "file",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.claude/CLAUDE.md",
+      "backupPath": "/Users/be_wang/.agents/backup/2026-01-26T08-31-52-609Z/Users/be_wang/.claude/CLAUDE.md",
+      "kind": "file",
+      "action": "backup"
+    },
+    {
+      "originalPath": "/Users/be_wang/.gemini/GEMINI.md",
+      "backupPath": "/Users/be_wang/.agents/backup/2026-01-26T08-31-52-609Z/Users/be_wang/.gemini/GEMINI.md",
+      "kind": "file",
+      "action": "backup"
+    },
+    {
+      "originalPath": "/Users/be_wang/.factory/AGENTS.md",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.codex/AGENTS.md",
+      "backupPath": "/Users/be_wang/.agents/backup/2026-01-26T08-31-52-609Z/Users/be_wang/.codex/AGENTS.md",
+      "kind": "file",
+      "action": "backup"
+    },
+    {
+      "originalPath": "/Users/be_wang/.config/opencode/AGENTS.md",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.config/amp/AGENTS.md",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.agents/commands",
+      "kind": "dir",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.claude/commands",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.factory/commands",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.codex/prompts",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.config/opencode/commands",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.cursor/commands",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.gemini/commands",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.agents/hooks",
+      "kind": "dir",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.claude/hooks",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.factory/hooks",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.agents/skills",
+      "kind": "dir",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.claude/skills",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.factory/skills",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.codex/skills",
+      "backupPath": "/Users/be_wang/.agents/backup/2026-01-26T08-31-52-609Z/Users/be_wang/.codex/skills",
+      "kind": "dir",
+      "action": "backup"
+    },
+    {
+      "originalPath": "/Users/be_wang/.config/opencode/skills",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.cursor/skills",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.gemini/skills",
+      "kind": "symlink",
+      "action": "create"
+    },
+    {
+      "originalPath": "/Users/be_wang/.copilot/skills",
+      "kind": "symlink",
+      "action": "create"
+    }
+  ]
+}

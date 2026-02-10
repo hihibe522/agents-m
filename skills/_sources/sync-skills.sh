@@ -18,7 +18,62 @@ NC='\033[0m' # No Color
 echo -e "${BLUE}🔄 同步 personal 技能...${NC}"
 echo ""
 
+# ========================================
+# 自動更新 superpowers symlink
+# ========================================
+echo -e "${BLUE}🔗 檢查 superpowers 連結...${NC}"
+
+SUPERPOWERS_LINK="$SKILLS_DIR/_sources/superpowers"
+CLAUDE_PLUGINS_DIR="$HOME/.claude/plugins/cache/claude-plugins-official/superpowers"
+
+if [ -L "$SUPERPOWERS_LINK" ]; then
+  current_target=$(readlink "$SUPERPOWERS_LINK")
+
+  # 檢查是否指向 Claude Code 的 superpowers
+  if [[ "$current_target" == *".claude/plugins/cache"*"superpowers"* ]]; then
+    echo "  ℹ️  偵測到 superpowers 連結到 Claude Code"
+
+    # 檢查 Claude plugins 目錄是否存在
+    if [ -d "$CLAUDE_PLUGINS_DIR" ]; then
+      # 找出最新版本（按修改時間排序）
+      latest_version=$(ls -t "$CLAUDE_PLUGINS_DIR" 2>/dev/null | head -1)
+
+      if [ -n "$latest_version" ]; then
+        latest_path="$CLAUDE_PLUGINS_DIR/$latest_version"
+
+        # 檢查當前連結是否指向最新版本
+        if [ "$current_target" != "$latest_path" ]; then
+          echo -e "  ${YELLOW}📦 發現新版本: $latest_version${NC}"
+          echo "     當前: $(basename "$current_target")"
+          echo "     最新: $latest_version"
+
+          # 更新 symlink
+          rm "$SUPERPOWERS_LINK"
+          ln -s "$latest_path" "$SUPERPOWERS_LINK"
+          echo -e "  ${GREEN}✅ 已更新 superpowers 連結到 v$latest_version${NC}"
+        else
+          echo "  ✓ superpowers 已是最新版本 ($latest_version)"
+        fi
+      else
+        echo -e "  ${RED}❌ 找不到 Claude Code superpowers 版本${NC}"
+      fi
+    else
+      echo -e "  ${YELLOW}⚠️  Claude Code plugins 目錄不存在${NC}"
+    fi
+  else
+    echo "  ℹ️  superpowers 使用獨立 git repo"
+  fi
+elif [ -d "$SUPERPOWERS_LINK" ]; then
+  echo "  ℹ️  superpowers 是獨立目錄（非 symlink）"
+else
+  echo -e "  ${RED}❌ superpowers 目錄不存在${NC}"
+fi
+
+echo ""
+
+# ========================================
 # 檢查目錄是否存在
+# ========================================
 if [ ! -d "$SKILLS_DIR" ]; then
   echo -e "${RED}❌ 錯誤：找不到 ~/.agents/skills 目錄${NC}"
   exit 1

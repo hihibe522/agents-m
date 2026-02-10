@@ -163,8 +163,18 @@ def push(branch_name: str, remote: str = "origin") -> tuple[bool, str]:
     code, stdout, stderr = run_cmd(["git", "push", "-u", remote, branch_name])
     if code != 0:
         return False, stderr
+
+    # 驗證 upstream tracking 是否設定成功
+    _, tracking_info, _ = run_cmd(["git", "config", "--get", f"branch.{branch_name}.remote"])
+    upstream_set = tracking_info == remote
+
     # git push 的訊息在 stderr（這是正常行為）
-    return True, stderr or stdout
+    push_output = stderr or stdout
+
+    if upstream_set:
+        return True, f"{push_output}\n✓ Upstream tracking 已設定: {remote}/{branch_name}"
+    else:
+        return True, f"{push_output}\n⚠ 警告: Upstream tracking 未設定成功"
 
 
 # ─── CLI 入口 ─────────────────────────────────

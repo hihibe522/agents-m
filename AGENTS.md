@@ -475,9 +475,3 @@ class UserService {
 - 願意挑戰自己的假設
 - 接受新的最佳實踐
 - 向團隊成員學習
-
-<!-- ## Superpowers System
-
-<EXTREMELY_IMPORTANT>
-You have superpowers. Superpowers teach you new skills and capabilities. RIGHT NOW run: `~/.codex/skills/_sources/superpowers/.codex/superpowers-codex bootstrap` and follow the instructions it returns.
-</EXTREMELY_IMPORTANT> -->
